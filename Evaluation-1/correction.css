@@ -1,0 +1,253 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'liberation_sansregular';
+    src: url('../fonts/liberationsans-regular-webfont-webfont.woff2') format('woff2'),
+         url('../fonts/liberationsans-regular-webfont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    font-family: liberation_sansregular, Arial, Helvetica, sans-serif;
+    color: #212121;
+    background-color: #1c1c1c;
+}
+
+header{
+    background-image: url(./images/background.jpg);
+}
+
+/*POSITIONNEMENT DES BOX HEADER  */
+/* rajout du main pour appliquer les m^mes propriétés */
+/* VIRGULE sert à appliquer sur différents éléments */
+header > div, main, footer > div{
+    /* width: 1024px pour une taille fixe (!! taille ecran) */
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    display: flex;
+    /* WRAP POUR REMETTRE LES IMAGES */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}
+
+header figcaption{
+    margin-top: 20px ;
+}
+
+header figcaption span{
+    color: #ea9f06;
+}
+
+/* header div div */
+header figure+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header nav a{
+    text-decoration: none;
+    color: inherit;
+    /* EM = taille déclarée dans le CSS */
+    /* REM = taille par defaut du navigateur*/
+    /* font-size: 1rem; */
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+header nav a:hover{
+    color: #ea9f06;
+    transition: all 0.5s;
+}
+
+        /* PARTIE MAIN */
+main>div{
+    width: 100%;
+}
+
+/* les images prennent 100% de leur conteneur */
+main img{
+    width: 100%;
+}
+
+main section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f3f3f3;
+    /* marge du bas de la galerie */
+    padding-bottom: 150px;
+}
+
+main article{
+    width: 40%;
+    margin: 2rem auto;
+}
+main article{
+    position: relative;
+    text-align: center;
+}
+figure{
+    position: relative;
+}
+
+/* Caption en relatif, son parent FIGURE en absolu */
+article figcaption{
+    position: absolute;
+    bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* REVOIR TAILLE QUI BOUGE AVEC CHRISTIAN */
+    width: 100%;
+}
+
+main article div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.voir{
+    text-decoration: none;
+    background: linear-gradient(#363636, #9A9A9A);
+    color: white;
+    padding: 2%;
+}
+.voir:hover{
+    background: #ea9f06;
+    color: #212121;
+    transition: all 0.5s;
+}
+.oldprice{
+    text-decoration: line-through;
+}
+.newprice{
+    color: #ea9f06;
+}
+.rabais{
+    color: #ea9f06;
+    background-color:#292929;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 2%;
+    position: absolute;
+    top: 1rem;
+    right: 0rem;
+    transform: translateX(50%);
+}
+
+
+        /* FOOTER mise en forme */
+footer{
+    background-color: #373737;
+}
+footer div{
+    display: block;
+    text-align: center;
+    padding: 0%;
+}
+
+footer nav{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: auto;
+    position: relative;
+    top: 0%;
+    transform: translateY(-50%
+    )
+}
+
+footer nav aside{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #d1d1d1;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: #212121;
+}
+footer nav a:hover{
+    color: #ea9f06;
+    transition: all 0.5s;
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+}
+
+footer section figure{
+    width: 22%;
+}
+
+footer figcaption{
+    font-size: small;
+    color: white;
+}
+
+footer hr{
+    margin: 20px auto;
+}
+
+#reseaux{
+    justify-content: center;
+}
+#reseaux a:hover{
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+footer p{
+    color: white;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 720px) {
+    header div{
+        flex-direction: column;
+        gap:2rem;
+        align-items: center;
+    }
+    header figure{
+        width: 80%;
+        text-align: center;
+    }
+    header div div{
+        width: 80%;
+        gap:1rem;
+        align-items: flex-start;
+    }
+    header nav{
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+    }
+    header nav a{
+        padding: 0;
+    }
+    main{
+        width: 95%;
+    }
+    main article{
+        width: 70%;
+    }
+    
+}
